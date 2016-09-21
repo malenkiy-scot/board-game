@@ -48,14 +48,31 @@ class Game(object):
         self.rules = Rules(config)
         self.players = self.create_players(config)
         self.board = self.create_board(config)
-        self.game_state = self.create_game_state()
+        self.game_state = self.create_game_state(config)
         self.main_controller = GameController(self)
 
+    def create_players(self, config):
+        # TODO: implement
+        pass
+
+    def create_board(self, config):
+        # TODO: implement
+        pass
+
+    def create_game_state(self, config):
+        # TODO: implement
+        pass
+
     def stop_game(self):
-        # TODO: implement this
+        # TODO: implement
         pass
 
     def pause_game(self):
+        """
+        This method pauses the game until unpaused
+
+        :return:
+        """
         # TODO: implement
         pass
 
@@ -63,10 +80,12 @@ class Game(object):
 class Rules(object):
     # TODO: flesh this class out
     def __init__(self, config=None):
-        # TODO: implement this
+        # TODO: implement
         pass
 
 
 class GameController(controller.Controller):
-    def __init__(self, game):
+    def __init__(self, game, name="Main Game Controller"):
         controller.Controller.__init__(self)
+        self.owner = game
+        self.name = name
